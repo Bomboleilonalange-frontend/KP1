@@ -1,0 +1,119 @@
+@media (max-width:1187px) {
+    .footer-block{
+        column-gap: 90px;
+    }
+
+    .Pay{
+        align-self: center;
+    } 
+}
+
+@media (max-width: 1080px) {
+    .header-right .hamburger {
+        display: block;
+    }
+    header .header-left nav {
+        margin: 0;
+        position: absolute;
+        top: -200%;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        padding: 30px;
+        transition: 0.3s ease-in-out;
+        text-align: center;
+        z-index: 1;
+    }
+    header .header-left nav.navbar {
+        top: 70px;
+    }
+    header .header-left nav ul {
+        flex-direction: column;
+        row-gap: 35px;
+        font-size: 17px;
+    } 
+    .footer-block{
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        column-gap: 0;
+    }
+    .footer-block-two{
+        flex-direction: row;
+        column-gap: 40px;
+        max-width: 400px;
+    }
+    .footer-block-two a{
+        font-size: 20px;
+    }
+    .footer-block-three{
+        width: 100%;
+        padding-top: 70px;
+    }
+    .Pay{
+        padding-top: 40px;
+    }
+    .wrapper{
+        top: 0;
+    }
+}
+@media (max-width: 694px) {
+    header .header-left nav.navbar {
+        top: 90px;
+    }
+    .footer-block-one{
+        align-items: center;
+        max-width: 459.33px;
+
+    }
+    .footer-block-one p{
+        text-align: center;
+    }
+    .footer-block-two{
+        padding-top: 70px;
+    }
+}
+@media (max-width: 561px) {
+    .footer-block-two{
+        flex-direction: column;
+    }
+    .footer-block-three h2{
+        font-size: 30px;
+    }
+    .Pay img{
+        width: 64px;
+    }
+
+}
+@media only screen and (max-width: 561px) {
+    nav .Logic {
+        display: flex;
+        justify-content: center;
+        column-gap: 30px;
+        margin-top: 30px;
+    }
+     .header-right .Logic {
+        display: none;
+    }
+}
+
+@media (max-width: 456px) {
+    .logos{
+        justify-content: center;
+    }
+    .Pay{
+        justify-content: center;
+    }
+    .Dish img{
+        width: 200px;
+        height: 200px;
+    }
+    .Dish h3{
+        font-size: 18px;
+    }
+    .description{
+        font-size: 16px;
+    }
+    .price{
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,735 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/PlayfairDisplaySC-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/PlayfairDisplaySC-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Forum";
+  src: url(../fonts/Forum-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Marck Script";
+  src: url(../fonts/MarckScript-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+.header {
+  padding-top: 27px;
+}
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 80px;
+}
+.header-left {
+  display: flex;
+  align-items: flex-end;
+  column-gap: 180px;
+}
+.logo {
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-list {
+  display: flex;
+  column-gap: 70px;
+  font-size: 16px;
+}
+.nav-link {
+  position: relative;
+  color: #000;
+}
+.nav-link::after {
+  position: absolute;
+  left: 0;
+  width: 0%;
+  bottom: -9px;
+  content: "";
+  display: block;
+  height: 2px;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  transition: width 0.2s ease-in;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link.active::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: -9px;
+  content: "";
+  display: block;
+  height: 2px;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+}
+.header-right {
+  display: flex;
+  align-items: flex-end;
+}
+.header-right .hamburger {
+  margin-left: 20px;
+  cursor: pointer;
+  display: none;
+}
+.hamburger .line{
+  width: 30px;
+  height: 2px;
+  background: black;
+  display: block;
+  margin: 10px 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#hamburger-1.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-1.is-active .line:nth-child(1){
+  -webkit-transform: translateY(9px) rotate(45deg);
+  -ms-transform: translateY(9px) rotate(45deg);
+  -o-transform: translateY(9px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
+}
+
+#hamburger-1.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-15px) rotate(-45deg);
+  -ms-transform: translateY(-15px) rotate(-45deg);
+  -o-transform: translateY(-15px) rotate(-45deg);
+  transform: translateY(-15px) rotate(-45deg);
+}
+
+.Logic {
+  display: flex;
+  align-items: flex-end;
+  column-gap: 30px;
+}
+
+.Backet-icon img {
+  width: 38px;
+  height: 38px;
+}
+
+.Backet-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.Backet_quentity {
+  position: absolute;
+  left: 33px;
+  bottom: 36px;
+  background-color: #64bb47;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.Backet-wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.Backet {
+  position: fixed;
+  display: grid;
+  grid-template-columns: minmax(200px, 400px) repeat(4, 1fr);
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+  padding: 20px 20px;
+  grid-gap: 50px 20px;
+  border: 2px solid;
+  border-radius: 20px;
+  border-color: #64bb47;
+
+}
+
+.cart-description {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+
+.item-description {
+  display: flex;
+  align-self: center;
+  column-gap: 18px;
+}
+
+.item-description h3 {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+.item-price{
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  align-self: center;
+}
+.item-quantity{
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  align-self: center;
+}
+.item-total-price{
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  align-self: center;
+}
+.trash{
+  align-self: center;
+}
+
+.Buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-size: 18px;
+  color: #ffff;
+  width: 215px;
+  height: 49px;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  border-radius: 33px;
+  grid-row-start: 4;
+}
+
+.Continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-size: 18px;
+  color: #ffff;
+  width: 262px;
+  height: 49px;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  border-radius: 33px;
+  grid-column-start: 2;
+  grid-row-start: 4;
+  cursor: pointer;
+}
+.Continue:active{
+  transform: scale(0.96);
+}
+
+.total-price {
+  display: grid;
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 4;
+  justify-content: end;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  align-self: center;
+}
+.Logic a img {
+  width: 38px;
+  height: 38px;
+}
+.btn {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-size: 18px;
+  color: #ffff;
+  width: 119px;
+  height: 51px;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  border-radius: 26px;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 1ms ease;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn:hover {
+  color: green;
+  border: 1px solid green;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffff;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+.btn1::before {
+  transform: scaleX(0);
+}
+.btn1:hover::before {
+  transform: scaleX(1);
+}
+
+nav .Logic {
+  display: none;
+}
+.header-row {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.header-text {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 87px;
+  letter-spacing: 1.65px;
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  position: fixed;
+  top: 100px;
+  max-width: 337px;
+  width: 100%;
+  height: 480px;
+  background: #ffffff;
+  border-radius: 20px;
+  z-index: 150;
+  transform: scale(0);
+  transition: transform .5s ease;
+}
+.wrapper.active-popur{
+  transform: scale(1);
+}
+.close,.close2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.close ,.close2 img {
+  width: 30px;
+  height: 30px;
+}
+.Authorization {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  padding-top: 50px;
+  text-align: center;
+}
+.Authorization-container {
+  display: none;
+}
+.login {
+  padding-top: 40px;
+}
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+.email-or-phone {
+  display: flex;
+  flex-direction: column;
+  width: 228px;
+}
+.email-or-phone input,
+.password input {
+  max-width: 380px;
+  width: 100%;
+  height: 33px;
+  border: 1px solid green;
+  border-radius: 5.34px;
+  padding-left: 10px;
+}
+.password {
+  display: flex;
+  flex-direction: column;
+  width: 228px;
+  padding-top: 20px;
+}
+.password a {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+  align-self: flex-end;
+  padding-top: 10px;
+}
+.Authorization-remember {
+  padding-top: 30px;
+}
+.Authorization-remember label {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin-left: 8px;
+}
+.Submit {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-size: 18px;
+  width: 147px;
+  height: 46px;
+  margin-top: 30px;
+  align-self: center;
+  border-radius: 26px;
+  border: 1px solid green;
+  color: green;
+  transition: all 0.5s ease;
+}
+.Submit:active {
+  transform: scale(0.94);
+}
+.Submit:hover {
+  color: rgb(255, 255, 255);
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+}
+.login-register {
+  align-self: center;
+  padding-top: 20px;
+}
+.login-register p {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+}
+.login-register a {
+  margin-left: 5px;
+  color: green;
+}
+.email-or-phone label,
+.password label {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  padding-bottom: 5px;
+}
+.email-or-phone input:focus{
+  box-shadow: 0px 0px 10px black;
+}
+.password input:focus{
+  box-shadow: 0px 0px 10px black;
+}
+.Registrathion {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  padding-top: 50px;
+  text-align: center;
+}
+.Registrathion-remember {
+  padding-top: 56px;
+}
+.Registrathion-remember label {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  margin-left: 8px;
+}
+.zatemnenie {
+  opacity: 0.8;
+  background-color: rgba(1, 1, 1, 1);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  z-index: 100;
+  overflow: auto;
+}
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 30px;
+  padding-top: 50px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 273px;
+  height: 305px;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(#64bb47, #2c9553) border-box;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+.card a{
+  display: contents;
+  color: #000000;
+
+}
+.card img {
+  align-self: center;
+  width: 70px;
+  height: 70px;
+}
+.card h3 {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  align-self: center;
+}
+.card p {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.main {
+  padding-top: 150px;
+  padding-bottom: 60px;
+}
+.Opening-hours {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  padding-top: 20px;
+}
+.Form {
+  padding-top: 200px;
+}
+.Form-description {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+}
+.form-submit {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  width: 100%;
+  row-gap: 40px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.form-group input {
+  border: 1px solid green;
+  border-radius: 33px;
+  height: 50px;
+  padding-left: 20px;
+  font-size: 18px;
+  font-family: "Forum";
+  font-weight: 400;
+}
+.form-group input:focus{
+  box-shadow: black 0px 0px 10px;
+}
+.form-group textarea {
+  max-width: 900px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: "Forum";
+  font-weight: 400;
+  padding: 10px;
+}
+.form-group label {
+  font-style: normal;
+  font-family: "Marck Script";
+  font-weight: 400;
+  font-size: 22px;
+}
+.Submit2 {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-size: 18px;
+  color: #ffff;
+  width: 185px;
+  height: 51px;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  border-radius: 26px;
+  align-self: center;
+}
+.Submit2:active{
+  transform: scale(0.96);
+}
+.footer {
+  margin-top: 175px;
+  background-color: #000;
+}
+.footer-block {
+  display: flex;
+  column-gap: 150px;
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+.footer-block-one {
+  display: flex;
+  flex-direction: column;
+  row-gap: 31px;
+  max-width: 238px;
+}
+.footer-block-one a {
+  font-family: "Playfair Display";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 44px;
+  letter-spacing: 0.05em;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-block-one p:nth-child(2) {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 3.5px;
+  color: #ffff;
+}
+.footer-block-one p:nth-child(3) {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-block-two {
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  max-width: 238px;
+}
+.footer-block-two a {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffff;
+}
+.footer-block-two a:hover {
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-block-three h2 {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 28px;
+  color: #ffffff;
+  text-align: center;
+}
+.footer-block-three {
+  display: flex;
+  flex-direction: column;
+}
+.logos {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 26px;
+  padding-top: 30px;
+}
+.logos img {
+  max-width: 39px;
+  max-height: 39px;
+}
+.Pay {
+  display: flex;
+  align-self: flex-end;
+  flex-wrap: wrap;
+  padding-top: 184px;
+  column-gap: 24px;
+}
+.Pay img {
+  max-height: 61px;
+}

@@ -1,0 +1,192 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/PlayfairDisplaySC-Regular.ttf);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url(../fonts/PlayfairDisplaySC-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Forum";
+  src: url(../fonts/Forum-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Marck Script";
+  src: url(../fonts/MarckScript-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+.header {
+  padding-top: 50px;
+  text-align: center;
+}
+.header-heading {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+}
+.main {
+  padding-top: 100px;
+}
+.Who-we-are {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.section-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.section-heading {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+}
+.section-text {
+  font-family: "Forum";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  max-width: 553px;
+  line-height: 40px;
+  letter-spacing: 0.04em;
+}
+.section-picture {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 18px;
+}
+.Our-mission {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding-top: 120px;
+}
+.History {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding-top: 120px;
+}
+.btn {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-size: 18px;
+  color: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 51px;
+  top: 83%;
+  left: 55px;
+  background: linear-gradient(180deg, #64bb47 0%, #2c9553 100%);
+  border-radius: 26px;
+  user-select: none;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  transition: all 1ms ease;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn:hover {
+  color: green;
+  border: 1px solid green;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffff;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+}
+.btn1::before {
+  transform: scaleX(0);
+}
+.btn1:hover::before {
+  transform: scaleX(1);
+}
+.Staff {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+  padding-top: 140px;
+}
+.Staff-heading {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  text-align: center;
+}
+.Slider-container {
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+}
+.slide {
+  height: 80vh;
+  border-radius: 30px;
+  margin: 10px;
+  cursor: pointer;
+  color: white;
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+.slide h3 {
+  font-family: "Marck Script";
+  font-style: normal;
+  font-weight: 400;
+  position: absolute;
+  font-size: 30px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+.slide.active {
+  flex: 4.5;
+}
+.slide.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
